@@ -49,7 +49,9 @@ In this remake, the player is able to perform the following actions:
 - Continuously decrease stamina to increase movespeed (new)
 - Zoom in/out camera (new)
 
-![type:video](./mp4s/RemakeActions.mp4)
+<video width="320" height="240" controls>
+  <source src="../mp4s/RemakeActions.mp4" type="video/mp4">
+</video>
 
 Regarding the entity actions, a simple ability system is implemented. A priority queue is in place to hold all active ability instances and they will be executed by the assigned order. Abilities can be defined in separate classes as methods and entities can acquire them by inheriting the corresponding classes. 
 

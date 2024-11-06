@@ -1,13 +1,20 @@
 # [Lobster-Remake](https://github.com/DiceSpinner/Lobster-Remake) (2021 May - 2021 Sep)
 
 ### BackGround 
-A remake of the 2D Top Down dungeon exploration game I've developed in Grade 11 using pygame. More information and clips of this game are available on the github repo. The project started after my first year at University of Toronto doing computer science by the moltivation of putting the knowledge I newly gained to test. In the four months I had in summer I managed to implement the majority of the gameplay features from the original game with greatly improved flexibility, as well as some new features. In the following sections I will start with reviewing what the original game had and then move on to the improvements and changes made in this remake. Also you can check out the github repo for more clips and demonstrations of the features.
+A remake of the 2D Top Down dungeon exploration game I've developed in Grade 11 using pygame. More information and clips of this game are available on the github repo. The project started after my first year at University of Toronto doing computer science by the moltivation of putting the knowledge I newly gained to test. In the four months I had in summer I managed to implement the majority of the gameplay features from the original game with greatly improved flexibility, as well as some new features. In the following sections I will start with reviewing what the original game had and then move on to the improvements and changes made in this remake if it is implemented. Also you can check out the github repo for some more clips and demonstrations of the features.
+
+### Basic Gameplay of the Original Game
+The player is a lobster, and is trapped in a dungeon. The goal of the game is to find the exit of the map. There will be challenges such as locating keys to open doors and enemies will try to kill the player on sight. At the end the player needs to defeat 2 bosses guarding the exit before completing the game. 
+
+<video width="900" height="600" controls>
+  <source src="../mp4s/lobster_gameplay.mp4" type="video/mp4">
+</video>
 
 ### Camera
-The camera in the oringal game is static and does not move along with the player. The size of the screen is hard coded to fit in the entire map and the UIs.
+In the original game the camera in the oringal game is static and does not move along with the player. The size of the screen is hard coded to fit in the entire map and the UIs.
 ![](./gifs/static_camera.gif)
 
-In the remake the camera is not adjusted to fit in the whole map and can move along with the player. The range of visibility is adjustable with zoom in/out supported. It also recognizes the edge of the map and remains static in x, y axis until the player moves out.
+In the remake the camera is not bounded to fit in the whole map and can move along with the player. The range of visibility is adjustable with zoom in/out supported. It also recognizes the edge of the map and remains static in x, y axis until the player moves out.
 ![](./gifs/Dynamic%20Camera.gif)
 
 ### Player Actions
@@ -49,7 +56,7 @@ In this remake, the player is able to perform the following actions:
 - Continuously decrease stamina to increase movespeed (new)
 - Zoom in/out camera (new)
 
-<video width="320" height="240" controls>
+<video width="900" height="600" controls>
   <source src="../mp4s/RemakeActions.mp4" type="video/mp4">
 </video>
 
@@ -69,12 +76,14 @@ The tiles, items, entities and maps can be defined and their properties can be c
 The original game supports collision detection beween any combination of axis aligned squares and circles. At the beginning the framerate is not ideal, and the biggest bottleneck is the entity vs tile collision detection. The original 30 by 40 map has 1200 tiles and it is not feasible to check for collision with all of them for each moving entity. Here it is assumed the size of every entity is less than the predefined tile size in order to simplify the collision detection. Since every entity is no bigger than 1 tile, each moving entity only needs to check for collision with the nearest 9 blocks surrounding it. With the limitation of the max number of moving entities alive, the collision detection calculations are greatly reduced. 
 
 When the player collides with a solid object, we want it to stop moving in its direction, but we also don't want to lock the player in place. So 4 flags are there to represent the direction where the player is restricted. When detecting a collision, the game will check the direction the collided object from the player's point of view and set the appropriate flags. And that enables the player to slide along the wall.
-![](./gifs/Player%20Slide.gif)
 
+One problem that often arises is when the entity moves too fast, it'll move through the wall as positions are calculated in discrete frames. The image below desmonstrate this. When the player clips into the wall, the game will think it is colliding with the wall on the right and prevents it from sliding. This issue will be addressed in the remake.
+
+![](./gifs/Player%20Slide.gif)
 
 In this remake, the supported shapes that can collide remain unchanged. Improvements were made to allow the system to hande collision detection of entities with any size without having to go through every tile in the map. The map is broken down into tiny spaces the same size as tiles. An entity is said to occupy one of such space when its axis aligned bounding box is collided with this tiled space. Each of the tiled space will keep a set of entities that occupies it and conversely each entity will keep a record of the set of tiled spaces it occupies. To get the list of tiles/entities the entity is colliding with we just go through the union of the sets of the occupied tiles and apply collision detection algorithm for the correct shape pair. For performance, we only update this occupation status of entities that is capable of moving each frame.
 
-In the remake the entities are capable of moving in all directions. The velocity of the entity is broken down into xy components. The game uses the normalized xy components as step size and will continuously swap between stepping in x and y directions until the desired displacement of the current frame is completed. The frequency of x and y steps varies based on the velocity direction. When a collision is detected after taking the step, the step is undo and the game continues with stepping in the other axis. 
+In the remake the entities are capable of moving in all directions. The velocity of the entity is broken down into xy components. To handle wall clipping when entity moves too fast, the game uses the normalized xy components as step size and will continuously swap between stepping in x and y directions until the desired displacement of the current frame is completed. The frequency of x and y steps varies based on the velocity direction. When a collision is detected after taking the step, the step is undo and the game continues with stepping in the other axis. The trade off here is, the faster the entity moves, the more steps need to be calculated and thus takes more processing resource.
 ![](./gifs/Entity%20Collision.gif)
 
 ### Tile Based Lighting and Lazy Drawing
@@ -113,7 +122,8 @@ Lazy drawing worked out well for some time, until I started working on displayin
 ![alt text](./images/ui_broadcast_top.png)
 ![alt text](./images/ui_broadcast_bottom.png)
 
-However, When the player is switch between top and bottom half of the map, UI texts gets rendered on both top and bottom half of the map, and since the tiles there are not redrawn, the text remains there until it is overwritten by another prompt.
+However, When the player is switching between top and bottom half of the map, UI texts gets rendered on both top and bottom half of the map, and since the tiles there are not redrawn, the text remains there until it is overwritten by another prompt.
+
 ![](./gifs/UI%20Broadcast.gif)
 
 I have not implemented any other UI in the remake other than the simple ones you can see from other clips due to time constraint, but this kind of problem should not occur because we're not doing any kinds of lazy drawing here.

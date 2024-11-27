@@ -1,16 +1,20 @@
 # Salmon
+[itch.io Page](https://cuppajoeman.itch.io/salmon)
+[Trailer](https://www.youtube.com/watch?v=-Hlf1usRD6Y&feature=youtu.be)
+
 A 3D racing/adventure game where you play as a salmon developed using Unity game engine. At the moment this project is being activly developed as the course project for CSC404 2024 Fall. I'm contributing to this project as a programmer. Down below I'll go over the gameplay and features with an emphasis on procedural map generation which is what I've worked on the most.
 
 # Gameplay
-The player will play as a salmon whose goal is to swim upstream and reach the end of the river to lay eggs. The path will not be simple and in addition to the map complexity, various hostile creatures such as bears and eagles will join together to hunt the player. When the player dies to one of these creatures, the game will pause and allow the player to choose to respawn as another salmon and continue. The map will be procedurally generated so the play experience is going to vary everytime which adds a lot to the replayability.
+The player will play as a salmon whose goal is to swim upstream and reach the end of the river to lay eggs. The path will not be simple and in addition to the map complexity, various hostile creatures such as bears and eagles will join together to hunt the player. When the player dies to one of these creatures, the game will pause and allow the player to choose to respawn as another salmon and continue. 
+
+The game also featuers a multiplayer mode where 2 players can race against each other to be the first on to reach the end of the map. The map will involve procedurally generated river sections so the play experience is going to vary everytime which adds a lot to the replayability. 
+
+<video width="900" height="600" controls>
+  <source src="../mp4s/salmon_gameplay.mp4" type="video/mp4">
+</video>
+
 
 # NPCS Creatures
-
-Below are the basic descriptions of the creatures in this game. They are subject to changes until this course is concluded.
-
-## Fish (NPC)
-These are the fellow companions of the player. They will attract attention from hostile creatures for the player. In a regular salmon run many salmons will be killed and this adds moer weight to the theme of the game.
-
 ## Bear
 A hostile creature who'll sit on sides or middle of the river to try to grab any salmons passing through. Getting caught by one of them means instant death!
 
@@ -42,10 +46,10 @@ The river is modeled using a spline which models a [bezier curve](https://en.wik
 ![Image for spline settings](./images/salmon_spline_setting.png)
 ![Gif for changing river spline shape](./gifs/salmon_spline_shape.gif)
 
-Some parameters here are self explanatory, the horizonal and vertical curves defines how the splines looks like from top/side. And curve strengths define how much the curve should influence the shape. The number of knots specifies how many knots you wish to put down to simulate this curve. The higher the number the more precision you get, but the generator will be less performance since Unity Spline utitlies runtime scales with the number of knots in the spline.
+Some parameters here are self explanatory, the horizonal and vertical curves defines how the splines looks like from top/side. And curve strengths define how much the curve should influence the shape. The number of knots specifies how many knots you wish to put down to simulate this curve. The higher the number the more precision you get, but the generator will be less performant since Unity Spline utitlies runtime scales with the number of knots in the spline.
 
 ### River Chunk Width/Depth/Position Computation
-We want the river to have variation in widths and depths at various parts. The river spline is broken down into various chunks of equal size.
+We want the river to have variation in widths and depths at various parts. The river spline is broken down into various chunks of equal length.
 
 ![Image for river chunks](./images/salmon_river_chunk.png)
 
@@ -53,7 +57,7 @@ Here we have the river broken down into 3 chunks looking from a top down angle. 
 
 ![Image for river subchunks](./images/salmon_river_subchunks.png)
 
-Here each river chunk is further broken down into various subchunks. Subchunks only have 1 width which is the lerped value from the start width to the end width of the parent chunk. The position of the subchunk is its local position on the spline, which is computed via `SplineUtility.EvaluatePosition(Spline, float)`, in which the interpolation ratio `t` is the index of the subchunk divided by the number of subchunks. As an example, assume we have linear lerp factor function, the lerp factor of `A1-A4` is 0, 0.25, 0.5, 0.75, which means their widths is 3, 2.75, 2.5 and 2.25. The depths computation works in the same manner.
+Here each river chunk is further broken down into various subchunks. Subchunks only have 1 width which is the lerped value from the start width to the end width of the parent chunk. The position of the subchunk is its local position on the spline, which is computed via `SplineUtility.EvaluatePosition(Spline, t)`, in which the interpolation ratio `t` is the index of the subchunk divided by the number of subchunks. As an example, assume we have linear lerp factor function from 0 to 1, the lerp factor of `A1-A4` is 0, 0.25, 0.5, 0.75, which means their widths is 3, 2.75, 2.5 and 2.25. The depths computation works in the same manner.
 
 ![Image for river chunks setting](./images/salmon_river_chunk_setting.png)
 

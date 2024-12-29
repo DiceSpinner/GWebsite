@@ -7,7 +7,7 @@ A 3D racing/adventure game where you play as a salmon developed using Unity game
 # Gameplay
 The player will play as a salmon whose goal is to swim upstream and reach the end of the river to lay eggs. The path will not be simple and in addition to the map complexity, various hostile creatures such as bears and eagles will join together to hunt the player. When the player dies to one of these creatures, the game will pause and allow the player to choose to respawn as another salmon and continue. 
 
-The game also featuers a multiplayer mode where 2 players can race against each other to be the first on to reach the end of the map. The map will involve procedurally generated river sections so the play experience is going to vary everytime which adds a lot to the replayability. 
+The game also features a multiplayer mode where 2 players can race against each other to be the first on to reach the end of the map. The map will involve procedurally generated river sections so the in-game experience will vary on each run which adds a lot to the replayability. 
 
 <video width="900" height="600" controls>
   <source src="../mp4s/salmon_gameplay.mp4" type="video/mp4">

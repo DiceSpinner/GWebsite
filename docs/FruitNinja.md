@@ -1,4 +1,4 @@
-# Fruit Ninja
+# [Fruit Ninja](https://github.com/DiceSpinner/FruitNinja)
 As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wikipedia.org/wiki/Fruit_Ninja) game, developed in C++ with OpenGL for graphics and OpenAL for audios. This project mainly serves as a mean of self education on how things work at lower level. Some of the tasks include configuring the build system using visual studio, CMake with vcpkg package manager, setting up OpenGL to communicate with the GPU, rendering meshes, UI images, fonts and particles in an efficient manner and finally implementing gameplay logics using optimized approaches like object pooling, safe memory management with smart pointers and providing easy ways of extending behaviors using object oriented design and templates. This project is planned to be continued for at least a while to satisfy my ever expanding learning goal.
 
 ## What's Implemented

@@ -14,10 +14,11 @@ As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wik
 - Cursor picking
 ### Game
 - The original classic game mode
-  - 3 lives maximum, lose 1 life for every fruit miss, recover 1 life on every 50 fruit slices
-  - Spawns random fruits in random periods and amounts
-  - The game keeps on until all lives are lost
+    - 3 lives maximum, lose 1 life for every fruit miss, recover 1 life on every 50 fruit slices
+    - Spawns random fruits in random periods and amounts
+    - The game keeps on until all lives are lost
 - Fruit slice in half
+- Fruit Slice particle effect
 - Fruit slice audio
 - Start Menu music
 - Fruit deploy audio
@@ -26,20 +27,20 @@ As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wik
 - Mouse swipe trailing vfx
 
 ## Current State
-Ignore the non stopping particle effect at the center. Just here to test the particle system :).
 <video width="900" height="600" controls>
   <source src="../mp4s/fruit_ninja.mp4" type="video/mp4">
 </video>
 
 ## Will Be Implemented
 ### Game
-- Fruit Slice particle effect
+- Bonus score for hitting multiple fruits
+- Critical strike
 - Fruit Slice texture animation on the background
 - Bomb
-  - Outline rendering (Stencil Test)
-  - Game over if sliced
-  - Explosion effect
-  - Explosion audio
+    - Outline rendering (Stencil Test)
+    - Game over if sliced
+    - Explosion effect
+    - Explosion audio
   
 ## Under Consideration
 ### Game

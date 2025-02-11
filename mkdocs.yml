@@ -13,3 +13,6 @@ theme:
 
 plugins:
   - mkdocs-video
+
+markdown_extensions:
+  - def_list

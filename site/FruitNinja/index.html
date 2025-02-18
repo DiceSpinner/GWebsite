@@ -561,12 +561,24 @@
 <ul>
 <li>Texture/Model/Audio Loading</li>
 <li>Component based gameplay architecture</li>
-<li>Model rendering</li>
+<li>Model rendering<ul>
+<li>Phong shading</li>
+</ul>
+</li>
+<li>UI rendering<ul>
+<li>Image rendering</li>
 <li>Batched font rendering</li>
-<li>Instanced particle rendering</li>
+</ul>
+</li>
+<li>Instanced particle rendering<ul>
+<li>Billboard</li>
+</ul>
+</li>
+<li>Outline rendering by stencil test</li>
 <li>Object Pooling</li>
 <li>Rigidbody physics</li>
-<li>OpenAl context management</li>
+<li>Slow/Pause/Speed up time</li>
+<li>OpenAL Integration</li>
 <li>Cursor picking</li>
 </ul>
 <h3 id="game">Game</h3>
@@ -575,6 +587,12 @@
 <li>3 lives maximum, lose 1 life for every fruit miss, recover 1 life on every 50 fruit slices</li>
 <li>Spawns random fruits in random periods and amounts</li>
 <li>The game keeps on until all lives are lost</li>
+<li>Bomb<ul>
+<li>Explosion audio</li>
+<li>Outline rendering (Stencil Test)</li>
+<li>Game over if sliced</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Fruit slice in half</li>
@@ -598,17 +616,17 @@
 <li>Critical strike</li>
 <li>Fruit Slice texture animation on the background</li>
 <li>Bomb<ul>
-<li>Outline rendering (Stencil Test)</li>
-<li>Game over if sliced</li>
 <li>Explosion effect</li>
-<li>Explosion audio</li>
 </ul>
 </li>
 </ul>
 <h2 id="under-consideration">Under Consideration</h2>
 <h3 id="game_2">Game</h3>
 <ul>
-<li>Multiplayer, similar to the original local player where 2 players compete to survive the longest and can throw bombs at each other.</li>
+<li>Multiplayer, similar to the original local player where 2 players compete to survive the longest and can throw bombs at each other.<ul>
+<li>Idea: Slicing fruit fills energy bar, both player can spend energy to throw bombs at each other or spawn super fruit that provides special effects.</li>
+</ul>
+</li>
 </ul></div>
 
 

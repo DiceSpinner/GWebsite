@@ -6,17 +6,27 @@ As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wik
 - Texture/Model/Audio Loading
 - Component based gameplay architecture
 - Model rendering
-- Batched font rendering
+    - Phong shading
+- UI rendering
+    - Image rendering
+    - Batched font rendering
 - Instanced particle rendering
+    - Billboard
+- Outline rendering by stencil test
 - Object Pooling
 - Rigidbody physics
-- OpenAl context management
+- Slow/Pause/Speed up time
+- OpenAL Integration
 - Cursor picking
 ### Game
 - The original classic game mode
     - 3 lives maximum, lose 1 life for every fruit miss, recover 1 life on every 50 fruit slices
     - Spawns random fruits in random periods and amounts
     - The game keeps on until all lives are lost
+    - Bomb
+        - Explosion audio
+        - Outline rendering (Stencil Test)
+        - Game over if sliced
 - Fruit slice in half
 - Fruit Slice particle effect
 - Fruit slice audio
@@ -37,11 +47,9 @@ As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wik
 - Critical strike
 - Fruit Slice texture animation on the background
 - Bomb
-    - Outline rendering (Stencil Test)
-    - Game over if sliced
     - Explosion effect
-    - Explosion audio
   
 ## Under Consideration
 ### Game
 - Multiplayer, similar to the original local player where 2 players compete to survive the longest and can throw bombs at each other.
+    - Idea: Slicing fruit fills energy bar, both player can spend energy to throw bombs at each other or spawn super fruit that provides special effects.

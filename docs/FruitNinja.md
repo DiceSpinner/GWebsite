@@ -1,5 +1,7 @@
-# [Fruit Ninja](https://github.com/DiceSpinner/FruitNinja)
-As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wikipedia.org/wiki/Fruit_Ninja) game, developed in C++ with OpenGL for graphics and OpenAL for audios. This project mainly serves as a mean of self education on how things work at lower level. Some of the tasks include configuring the build system using visual studio, CMake with vcpkg package manager, setting up OpenGL to communicate with the GPU, rendering meshes, UI images, fonts and particles in an efficient manner and finally implementing gameplay logics using optimized approaches like object pooling, safe memory management with smart pointers and providing easy ways of extending behaviors using object oriented design and templates. This project is planned to be continued for at least a while to satisfy my ever expanding learning goal.
+# Fruit Ninja 
+As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wikipedia.org/wiki/Fruit_Ninja) game, developed in C++ with OpenGL for graphics and OpenAL for audios. This project mainly serves to educate myself on how things work at lower level. This is my first fully owned C++ project. The first thing I learned is to setup the build system using cmake with vcpkg package manager to manage the libraries needed for various tasks. The libraries themselves are relatively easy to find with vcpkg except for OpenAL where I have to fiddle around with the version and build settings to make sure the utilities are installed and the debug extension is enabled. I was following this [tutorial](https://learnopengl.com/Getting-started/OpenGL) and managed to implement rendering which handles meshes, UI images, fonts and particles in an relatively efficient manner. The foundation of the gameplay is similar to Unity. I managed to implement 3D transform and component object architecture as well as some utilities using templates and object oriented design. Finally the gameplay logics are implemented on top and I learned to use various C++ utilities to do various optimizations like object pooling to handle memory management. I have to limited to the scope of this project to be the list of features down below, but there's a good chance that I may want to come back and expand the scope. The current idea for expansion I have in mind is mulitplayer which could be a good chance for me to be proficient at multithreaded and socket programming.
+
+The source code can be found on the [github](https://github.com/DiceSpinner/FruitNinja).
 
 ## What's Implemented
 ### Fundamentals
@@ -27,6 +29,7 @@ As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wik
         - Explosion audio
         - Outline rendering (Stencil Test)
         - Game over if sliced
+        - Explosion visual effect and audio
 - Fruit slice in half
 - Fruit Slice particle effect
 - Fruit slice audio
@@ -45,9 +48,7 @@ As the title says, this is a clone for the infamous [Fruit Ninja](https://en.wik
 ### Game
 - Bonus score for hitting multiple fruits
 - Critical strike
-- Fruit Slice texture animation on the background
-- Bomb
-    - Explosion effect
+- Fruit Slice texture animation on the background  
   
 ## Under Consideration
 ### Game

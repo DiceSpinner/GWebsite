@@ -16,6 +16,8 @@ The source code can be found on the [github](https://github.com/DiceSpinner/Frui
     - Billboard
 - Outline rendering by stencil test
 - Object Pooling
+- Coroutine
+    - Game State Transition
 - Rigidbody physics
 - Slow/Pause/Speed up time
 - OpenAL Integration

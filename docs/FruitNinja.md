@@ -1,4 +1,4 @@
-# Introduction
+# Fruit Ninja
 
 This project is a custom-made Fruit Ninja clone built entirely in **C++ and OpenGL**. It began as a deep dive into the inner workings of real-time rendering, driven by a desire to understand what actually happens beneath the hood of game engines like Unity — which I had previously used extensively.
 

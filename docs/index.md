@@ -15,7 +15,7 @@ Many of my projects explore game development and graphical systems, while more r
 A complete recreation of the original Fruit Ninja arcade game, built from the ground up in C++ with modern OpenGL. It includes a custom rendering engine, real-time audio system using OpenAL, coroutine-based logic flow, and an in-progress **multiplayer mode over a custom UDP protocol**.
 
 <video width="900" height="600" controls>
-  <source src="../mp4s/fruit_ninja.mp4" type="video/mp4">
+  <source src="./mp4s/fruit_ninja.mp4" type="video/mp4">
 </video>
 
 ---

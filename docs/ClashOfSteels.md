@@ -24,6 +24,7 @@ If health is depleted, the character immediately dies.
 If posture is broken, the character becomes immobilized, creating an opportunity for follow-up strikes. This introduces a rhythm of offensive and defensive maneuvers similar to *Sekiro* but implemented through continuous physics rather than scripted animations.
 
 The character is able to perform the following actions:
+
 - Weapon Switch (Left): Switch the offhand weapon
 - Weapon Switch (Right): Switch the mainhand weapon
 - Block: Raise weapon to enter defense stance
@@ -38,6 +39,7 @@ The character is able to perform the following actions:
 - Rotate view, used in conjuection with move and dash for omni-directional movement
 
 The effect of actions:
+
 - Attacks will swing the weapon equipped in main(right) hand and will reduce the enemy posture and health on hit
   - Health damage is determined by **weapon sharpness**
   - Posture damage is determined by **weapon weight**

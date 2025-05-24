@@ -510,27 +510,31 @@
 <p>The game features a dual-resource combat system — <strong>Health</strong> and <strong>Posture</strong>. Both reduced on taking hits. </p>
 <p>If health is depleted, the character immediately dies.</p>
 <p>If posture is broken, the character becomes immobilized, creating an opportunity for follow-up strikes. This introduces a rhythm of offensive and defensive maneuvers similar to <em>Sekiro</em> but implemented through continuous physics rather than scripted animations.</p>
-<p>The character is able to perform the following actions:
-- Weapon Switch (Left): Switch the offhand weapon
-- Weapon Switch (Right): Switch the mainhand weapon
-- Block: Raise weapon to enter defense stance
-- Light Attack: Perform a quick attack with the mainhand weapon
-- Charged Attack: Perform a charged attack with the mainhand weapon
-  - Can hold to charge and increase damage
-  - Has max charge time, will attack automatically when fully charged
-- Weapon Art (Weapon dependant)
-  - Perform the equipped weapon art of the current mainhand weapon
-- 8 Directional Move 
-- 8 Directional Dash
-- Rotate view, used in conjuection with move and dash for omni-directional movement</p>
-<p>The effect of actions:
-- Attacks will swing the weapon equipped in main(right) hand and will reduce the enemy posture and health on hit
-  - Health damage is determined by <strong>weapon sharpness</strong>
-  - Posture damage is determined by <strong>weapon weight</strong>
-- Blocking mitigates health loss and reduces posture damage based on the difference between the sum of self <strong>character weight</strong> plus self <strong>weapon weight</strong> and enemy <strong>weapon weight</strong>. The heavier the
-- Attacks apply knockback based on <strong>weapon weight</strong>.
-- If the character hits terrain (walls) at high velocity, posture damage will be taken
-- <strong>Character weight</strong> acts as both a knockback resistance and a movement speed penalty.</p>
+<p>The character is able to perform the following actions:</p>
+<ul>
+<li>Weapon Switch (Left): Switch the offhand weapon</li>
+<li>Weapon Switch (Right): Switch the mainhand weapon</li>
+<li>Block: Raise weapon to enter defense stance</li>
+<li>Light Attack: Perform a quick attack with the mainhand weapon</li>
+<li>Charged Attack: Perform a charged attack with the mainhand weapon</li>
+<li>Can hold to charge and increase damage</li>
+<li>Has max charge time, will attack automatically when fully charged</li>
+<li>Weapon Art (Weapon dependant)</li>
+<li>Perform the equipped weapon art of the current mainhand weapon</li>
+<li>8 Directional Move </li>
+<li>8 Directional Dash</li>
+<li>Rotate view, used in conjuection with move and dash for omni-directional movement</li>
+</ul>
+<p>The effect of actions:</p>
+<ul>
+<li>Attacks will swing the weapon equipped in main(right) hand and will reduce the enemy posture and health on hit</li>
+<li>Health damage is determined by <strong>weapon sharpness</strong></li>
+<li>Posture damage is determined by <strong>weapon weight</strong></li>
+<li>Blocking mitigates health loss and reduces posture damage based on the difference between the sum of self <strong>character weight</strong> plus self <strong>weapon weight</strong> and enemy <strong>weapon weight</strong>. The heavier the</li>
+<li>Attacks apply knockback based on <strong>weapon weight</strong>.</li>
+<li>If the character hits terrain (walls) at high velocity, posture damage will be taken</li>
+<li><strong>Character weight</strong> acts as both a knockback resistance and a movement speed penalty.</li>
+</ul>
 <p>Rather than relying on baked animations to simulate hit reactions, all impact responses are computed using Unity’s 2D physics engine. This makes weapon swings, knockbacks, and stuns feel more grounded and dynamically reactive.</p>
 <hr>
 <h2 id="evolution-into-lobster-framework">Evolution into Lobster Framework<a class="headerlink" href="#evolution-into-lobster-framework" title="Permanent link">¶</a></h2>

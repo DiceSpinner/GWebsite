@@ -20,7 +20,7 @@
     
     
       
-        <title>ClashSteels - Jooby Hut</title>
+        <title>ClashOfSteels - Jooby Hut</title>
       
     
     
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#clash-of-steels" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ClashSteels
+              ClashOfSteels
             
           </span>
         </div>
@@ -249,15 +254,96 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ClashOfSteels
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    ClashSteels
+    ClashOfSteels
   </span>
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clash-of-steels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clash of Steels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combat-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combat Mechanics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-into-lobster-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution into Lobster Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evolution into Lobster Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Goals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -333,6 +419,65 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clash-of-steels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clash of Steels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combat-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combat Mechanics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-into-lobster-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution into Lobster Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evolution into Lobster Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Goals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -346,16 +491,60 @@
                   
 
 
-  <h1>ClashSteels</h1>
+  <h1>ClashOfSteels</h1>
 
-<div><p>A 2D Top down action game made with Unity engine.</p>
+<div><h2 id="clash-of-steels">Clash of Steels<a class="headerlink" href="#clash-of-steels" title="Permanent link">¶</a></h2>
+<p><strong>Clash of Steels</strong> is a top-down 2D action game developed in <strong>Unity (C#)</strong>. Designed to emulate the precision and tactical intensity of <em>Sekiro</em>, it implements a physics-driven combat system with posture mechanics and weighted interactions. The project is also a testbed for <strong>Lobster Framework</strong>, a modular toolkit I created to streamline gameplay architecture, editor workflows, and runtime pooling in Unity.</p>
+<p>This combination allowed me to explore a different style of gameplay engineering compared to my low-level C++ projects — this time leveraging Unity's ecosystem while still aiming for control and reusability in core systems.</p>
+<h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">¶</a></h2>
 <video width="900" height="600" controls>
   <source src="../mp4s/Poise__Character_State_Manager.mp4" type="video/mp4">
 </source></video>
 
 <video width="900" height="600" controls>
   <source src="../mp4s/Offhand_Grab.mp4" type="video/mp4">
-</source></video></div>
+</source></video>
+
+<hr>
+<h2 id="combat-mechanics">Combat Mechanics<a class="headerlink" href="#combat-mechanics" title="Permanent link">¶</a></h2>
+<p>The game features a dual-resource combat system — <strong>Health</strong> and <strong>Posture</strong>. Both reduced on taking hits. </p>
+<p>If health is depleted, the character immediately dies.</p>
+<p>If posture is broken, the character becomes immobilized, creating an opportunity for follow-up strikes. This introduces a rhythm of offensive and defensive maneuvers similar to <em>Sekiro</em> but implemented through continuous physics rather than scripted animations.</p>
+<p>The character is able to perform the following actions:
+- Weapon Switch (Left): Switch the offhand weapon
+- Weapon Switch (Right): Switch the mainhand weapon
+- Block: Raise weapon to enter defense stance
+- Light Attack: Perform a quick attack with the mainhand weapon
+- Charged Attack: Perform a charged attack with the mainhand weapon
+  - Can hold to charge and increase damage
+  - Has max charge time, will attack automatically when fully charged
+- Weapon Art (Weapon dependant)
+  - Perform the equipped weapon art of the current mainhand weapon
+- 8 Directional Move 
+- 8 Directional Dash
+- Rotate view, used in conjuection with move and dash for omni-directional movement</p>
+<p>The effect of actions:
+- Attacks will swing the weapon equipped in main(right) hand and will reduce the enemy posture and health on hit
+  - Health damage is determined by <strong>weapon sharpness</strong>
+  - Posture damage is determined by <strong>weapon weight</strong>
+- Blocking mitigates health loss and reduces posture damage based on the difference between the sum of self <strong>character weight</strong> plus self <strong>weapon weight</strong> and enemy <strong>weapon weight</strong>. The heavier the
+- Attacks apply knockback based on <strong>weapon weight</strong>.
+- If the character hits terrain (walls) at high velocity, posture damage will be taken
+- <strong>Character weight</strong> acts as both a knockback resistance and a movement speed penalty.</p>
+<p>Rather than relying on baked animations to simulate hit reactions, all impact responses are computed using Unity’s 2D physics engine. This makes weapon swings, knockbacks, and stuns feel more grounded and dynamically reactive.</p>
+<hr>
+<h2 id="evolution-into-lobster-framework">Evolution into Lobster Framework<a class="headerlink" href="#evolution-into-lobster-framework" title="Permanent link">¶</a></h2>
+<p><strong>Clash of Steels</strong> originally began as a standalone Unity project. As development progressed, I realized that many core gameplay systems — such as object pooling, runtime state management, and debugging tools — required significant time and effort to build. To improve efficiency and reduce duplication in future Unity projects, I began extracting these systems into a reusable module, which evolved into <strong>Lobster Framework</strong>.</p>
+<p>This framework was born directly out of the needs of <em>Clash of Steels</em>, and many of its systems were first tested and validated in this game before being generalized into standalone tools.</p>
+<p>🔗 <a href="https://dicespinner.github.io/LobsterFramework/">Explore Lobster Framework</a></p>
+<hr>
+<h3 id="design-goals">Design Goals<a class="headerlink" href="#design-goals" title="Permanent link">¶</a></h3>
+<ul>
+<li>Deliver the feel of weighty, reactive combat through real-time physics.</li>
+<li>Support clear feedback loops: posture break, slow-down effects, impact stun.</li>
+<li>Avoid animation lock-ins — use dynamic systems for movement and response.</li>
+<li>Establish reusable Unity systems for future projects via Lobster Framework.</li>
+</ul></div>
 
 
 

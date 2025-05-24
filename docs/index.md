@@ -20,7 +20,7 @@ A complete recreation of the original Fruit Ninja arcade game, built from the gr
 
 ---
 
-### [Clash of Steels](ClashSteels.md) + [Lobster Framework](https://dicespinner.github.io/LobsterFramework/) — *Unity/C#* (2022 – Present)
+### [Clash of Steels](ClashOfSteels.md) + [Lobster Framework](https://dicespinner.github.io/LobsterFramework/) — *Unity/C#* (2022 – Present)
 A top-down 2D action game. Along the way, I created **Lobster Framework**, a reusable Unity module for gameplay systems, editor tools, and object pooling, for my future Unity projects.
 
 ---

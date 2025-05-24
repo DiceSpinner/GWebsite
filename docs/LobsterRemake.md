@@ -1,4 +1,4 @@
-# [Lobster-Remake](https://github.com/DiceSpinner/Lobster-Remake) (2021 May - 2021 Sep)
+# [Lobster Remake](https://github.com/DiceSpinner/Lobster-Remake)
 
 ### BackGround 
 A remake of the 2D Top Down dungeon exploration game I've developed in Grade 11 using pygame. More information and clips of this game are available on the github repo. The project started after my first year at University of Toronto doing computer science by the moltivation of putting the knowledge I newly gained to test. In the four months I had in summer I managed to implement the majority of the gameplay features from the original game with greatly improved flexibility, as well as some new features. In the following sections I will start with reviewing what the original game had and then move on to the improvements and changes made in this remake if it is implemented. Also you can check out the github repo for some more clips and demonstrations of the features.

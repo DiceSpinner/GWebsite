@@ -300,9 +300,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#current-development-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Development Status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#demo" class="md-nav__link">
     <span class="md-ellipsis">
       Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Goals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-world-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game World &amp; Progression
     </span>
   </a>
   
@@ -323,21 +350,6 @@
       Evolution into Lobster Framework
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Evolution into Lobster Framework">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#design-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Design Goals
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -435,9 +447,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#current-development-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Development Status
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#demo" class="md-nav__link">
     <span class="md-ellipsis">
       Demo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Goals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-world-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game World &amp; Progression
     </span>
   </a>
   
@@ -458,21 +497,6 @@
       Evolution into Lobster Framework
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Evolution into Lobster Framework">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#design-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Design Goals
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -496,6 +520,10 @@
 <div><h2 id="clash-of-steels">Clash of Steels<a class="headerlink" href="#clash-of-steels" title="Permanent link">¶</a></h2>
 <p><strong>Clash of Steels</strong> is a top-down 2D action game developed in <strong>Unity (C#)</strong>. Designed to emulate the precision and tactical intensity of <em>Sekiro</em>, it implements a physics-driven combat system with posture mechanics and weighted interactions. The project is also a testbed for <strong>Lobster Framework</strong>, a modular toolkit I created to streamline gameplay architecture, editor workflows, and runtime pooling in Unity.</p>
 <p>This combination allowed me to explore a different style of gameplay engineering compared to my low-level C++ projects — this time leveraging Unity's ecosystem while still aiming for control and reusability in core systems.</p>
+<h2 id="current-development-status">Current Development Status<a class="headerlink" href="#current-development-status" title="Permanent link">¶</a></h2>
+<p>The game is still under active development. Major focus so far has been on building the core combat mechanics, physics interactions, and tooling infrastructure. While the foundational systems are functional — including the combat engine, ability system, and AI state machine architecture — aspects such as enemy logic, level content, and full game progression are still being prototyped and iterated.</p>
+<p>The project is currently in a pre-alpha state with a working testbed for real-time physics-based combat. The next milestone is to build a compelling boss fight and then construct a level around it to test and validate all core gameplay systems. Once these systems are proven in context, future effort will shift toward game design, visuals, and audio integration.</p>
+<hr>
 <h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">¶</a></h2>
 <video width="900" height="600" controls>
   <source src="../mp4s/Poise__Character_State_Manager.mp4" type="video/mp4">
@@ -506,49 +534,80 @@
 </source></video>
 
 <hr>
+<h2 id="design-goals">Design Goals<a class="headerlink" href="#design-goals" title="Permanent link">¶</a></h2>
+<ul>
+<li>Deliver the feel of weighty, reactive combat through real-time physics.</li>
+<li>Support clear feedback loops: posture break, slow-down effects, impact stun.</li>
+<li>Avoid animation lock-ins — use dynamic systems for movement and response.</li>
+<li>Establish reusable Unity systems for future projects via Lobster Framework.</li>
+</ul>
+<hr>
+<h2 id="game-world-progression">Game World &amp; Progression<a class="headerlink" href="#game-world-progression" title="Permanent link">¶</a></h2>
+<p>The game is currently structured as a single-player, linear experience. Each level is hand-designed and features its own unique set of enemies and resources for the player to gather. To complete the game, the player must progress through all levels in sequence.</p>
+<p>Boss encounters serve as the primary focus in each level. Every stage will contain one or more boss fights that challenge the player's mastery of the combat system. These encounters are intended to be the culmination of that level's mechanics and enemy design.</p>
+<p>Level design, enemy layouts, and exploration structure are still under active development, as the majority of effort so far has been devoted to implementing and refining the core combat mechanics.</p>
+<hr>
 <h2 id="combat-mechanics">Combat Mechanics<a class="headerlink" href="#combat-mechanics" title="Permanent link">¶</a></h2>
-<p>The game features a dual-resource combat system — <strong>Health</strong> and <strong>Posture</strong>. Both reduced on taking hits. </p>
-<p>If health is depleted, the character immediately dies.</p>
-<p>If posture is broken, the character becomes immobilized, creating an opportunity for follow-up strikes. This introduces a rhythm of offensive and defensive maneuvers similar to <em>Sekiro</em> but implemented through continuous physics rather than scripted animations.</p>
+<p>The game employs a layered combat resource system composed of three interrelated components:</p>
+<ul>
+<li>
+<p><strong>Health</strong>: The primary life resource. If health is depleted, the character immediately dies.</p>
+</li>
+<li>
+<p><strong>Posture</strong>: A visible stamina-like value that determines a character's defensive stability. When posture is broken:</p>
+<ul>
+<li>The character becomes immobilized for about 2–3 seconds.</li>
+<li>Posture is restored to 70% afterward.</li>
+<li>It gradually regenerates over time if the character avoids taking hits and is not attacking.</li>
+</ul>
+</li>
+<li>
+<p><strong>Poise</strong>: A hidden internal value used to interrupt actions.</p>
+<ul>
+<li>Damaged whenever health damage is taken.</li>
+<li>Causes brief vulnerability but recovers fully after a couple of seconds without receiving additional health damage.</li>
+</ul>
+</li>
+</ul>
+<p>This system encourages a balance between aggression and defense, and introduces a reactive flow to combat through layered stamina-like mechanics.</p>
+<p>This introduces a rhythm of offensive and defensive maneuvers similar to <em>Sekiro</em> but implemented through continuous physics rather than scripted animations.</p>
 <p>The character is able to perform the following actions:</p>
 <ul>
 <li>Weapon Switch (Left): Switch the offhand weapon</li>
 <li>Weapon Switch (Right): Switch the mainhand weapon</li>
 <li>Block: Raise weapon to enter defense stance</li>
-<li>Light Attack: Perform a quick attack with the mainhand weapon</li>
-<li>Charged Attack: Perform a charged attack with the mainhand weapon</li>
+<li>Light Attack Combo: Perform a sequence of light attacks with the mainhand weapon. The specific moveset is determined by the weapon's assigned animation.</li>
+<li>Charged Attack: Perform a charged attack with the mainhand weapon<ul>
 <li>Can hold to charge and increase damage</li>
 <li>Has max charge time, will attack automatically when fully charged</li>
-<li>Weapon Art (Weapon dependant)</li>
+</ul>
+</li>
+<li>Weapon Art (Weapon dependant)<ul>
 <li>Perform the equipped weapon art of the current mainhand weapon</li>
-<li>8 Directional Move </li>
+</ul>
+</li>
+<li>8 Directional Move</li>
 <li>8 Directional Dash</li>
 <li>Rotate view, used in conjuection with move and dash for omni-directional movement</li>
 </ul>
 <p>The effect of actions:</p>
 <ul>
-<li>Attacks will swing the weapon equipped in main(right) hand and will reduce the enemy posture and health on hit</li>
+<li>Attacks will swing the weapon equipped in main(right) hand and will reduce the enemy posture and health on hit<ul>
 <li>Health damage is determined by <strong>weapon sharpness</strong></li>
 <li>Posture damage is determined by <strong>weapon weight</strong></li>
-<li>Blocking mitigates health loss and reduces posture damage based on the difference between the sum of self <strong>character weight</strong> plus self <strong>weapon weight</strong> and enemy <strong>weapon weight</strong>. The heavier the</li>
-<li>Attacks apply knockback based on <strong>weapon weight</strong>.</li>
+</ul>
+</li>
+<li>Blocking mitigates health loss and reduces posture damage based on the weight dynamics between attacker and defender. The heavier the enemy's weapon, the more posture damage it inflicts. Conversely, the greater the combined weight of the character and their blocking weapon, the less posture damage they receive.</li>
+<li>Knockback force is computed from the actual posture damage taken. As a result, if an attack is blocked and less posture damage is incurred, the resulting knockback will also be reduced.</li>
 <li>If the character hits terrain (walls) at high velocity, posture damage will be taken</li>
 <li><strong>Character weight</strong> acts as both a knockback resistance and a movement speed penalty.</li>
 </ul>
 <p>Rather than relying on baked animations to simulate hit reactions, all impact responses are computed using Unity’s 2D physics engine. This makes weapon swings, knockbacks, and stuns feel more grounded and dynamically reactive.</p>
 <hr>
 <h2 id="evolution-into-lobster-framework">Evolution into Lobster Framework<a class="headerlink" href="#evolution-into-lobster-framework" title="Permanent link">¶</a></h2>
-<p><strong>Clash of Steels</strong> originally began as a standalone Unity project. As development progressed, I realized that many core gameplay systems — such as object pooling, runtime state management, and debugging tools — required significant time and effort to build. To improve efficiency and reduce duplication in future Unity projects, I began extracting these systems into a reusable module, which evolved into <strong>Lobster Framework</strong>.</p>
+<p><strong>Clash of Steels</strong> originally began as a standalone Unity project. As development progressed, I realized that many core gameplay systems — including an ability system for managing character actions and casting, AI state machines, interaction handlers, and custom initialization utilities — required significant time and effort to build. Both the ability system and AI state machine include built-in serialization support and come with custom Unity editor interfaces for easier authoring and inspection. These systems also introduced custom engine events and were built on top of Unity to provide more flexibility and modularity. To improve efficiency and reduce duplication in future Unity projects, I began extracting these features into a reusable module, which evolved into <strong>Lobster Framework</strong>.</p>
 <p>This framework was born directly out of the needs of <em>Clash of Steels</em>, and many of its systems were first tested and validated in this game before being generalized into standalone tools.</p>
-<p>🔗 <a href="https://dicespinner.github.io/LobsterFramework/">Explore Lobster Framework</a></p>
-<hr>
-<h3 id="design-goals">Design Goals<a class="headerlink" href="#design-goals" title="Permanent link">¶</a></h3>
-<ul>
-<li>Deliver the feel of weighty, reactive combat through real-time physics.</li>
-<li>Support clear feedback loops: posture break, slow-down effects, impact stun.</li>
-<li>Avoid animation lock-ins — use dynamic systems for movement and response.</li>
-<li>Establish reusable Unity systems for future projects via Lobster Framework.</li>
-</ul></div>
+<p>🔗 <a href="https://dicespinner.github.io/LobsterFramework/">Explore Lobster Framework</a></p></div>
 
 
 

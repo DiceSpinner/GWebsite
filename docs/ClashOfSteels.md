@@ -1,6 +1,6 @@
 ## Clash of Steels
 
-**Clash of Steels** is a top-down 2D action game developed in **Unity (C#)**. Designed to emulate the precision and tactical intensity of *Sekiro*, it implements a physics-driven combat system with posture mechanics and weighted interactions. The project is also a testbed for **Lobster Framework**, a modular toolkit I created to streamline gameplay architecture, editor workflows, and runtime pooling in Unity.
+**Clash of Steels** is a top-down 2D action game developed in **Unity (C#)**. Designed to emulate the precision and tactical intensity of *Sekiro*, it implements a physics-driven combat system with posture mechanics and weighted interactions. The project is also a testbed for **Lobster Framework**, a modular toolkit I created to streamline gameplay architecture, editor workflows, and runtime pooling in Unity. Currently I'm using Unity built-in source control so only the framework has the source code on [github](https://github.com/DiceSpinner/LobsterFramework). The documentation of the framework currently undergoing development can be found [here](https://dicespinner.github.io/LobsterFramework/).
 
 This combination allowed me to explore a different style of gameplay engineering compared to my low-level C++ projects — this time leveraging Unity's ecosystem while still aiming for control and reusability in core systems.
 

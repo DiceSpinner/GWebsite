@@ -215,12 +215,12 @@ The multiplayer mode builds upon the single-player foundation by introducing rea
 
 ### Protocol Specification Highlights
 
-The multiplayer communication protocol is detailed in the [UDP Connection Protocol Specification](https://github.com/DiceSpinner/FruitNinja/blob/main/Common/doc/udp_connection_protocol_spec.md). Key components include:
+The multiplayer communication protocol is detailed in the [LiteConn Protocol Specification](https://github.com/DiceSpinner/FruitNinja/blob/main/Common/doc/lite_conn_protocol_spec.md). Key components include:
 
 - **Packet Structure**: Each packet comprises a header and payload. The header contains fields such as packet type, sequence number, and session ID, facilitating proper routing and handling.
 - **Handshake Mechanism**: A three-step handshake process establishes a session between peers, ensuring both parties are ready for data exchange.
 - **Reliability Features**: While UDP is inherently unreliable, the protocol introduces selective acknowledgment and retransmission mechanisms for critical packets, balancing performance with data integrity.
-- **Session Management**: The `UDPConnectionManager` oversees active sessions, handling timeouts and reconnections as necessary.
+- **Session Management**: The `LiteConnManager` oversees active sessions, handling timeouts and reconnections as necessary.
 
 ## Core Design Goals
 

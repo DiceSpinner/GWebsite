@@ -1064,12 +1064,12 @@
 <li>Direct peer address tracking and reconfiguration for NAT traversal and IP changes.</li>
 </ul>
 <h3 id="protocol-specification-highlights">Protocol Specification Highlights<a class="headerlink" href="#protocol-specification-highlights" title="Permanent link">¶</a></h3>
-<p>The multiplayer communication protocol is detailed in the <a href="https://github.com/DiceSpinner/FruitNinja/blob/main/Common/doc/udp_connection_protocol_spec.md">UDP Connection Protocol Specification</a>. Key components include:</p>
+<p>The multiplayer communication protocol is detailed in the <a href="https://github.com/DiceSpinner/FruitNinja/blob/main/Common/doc/lite_conn_protocol_spec.md">LiteConn Protocol Specification</a>. Key components include:</p>
 <ul>
 <li><strong>Packet Structure</strong>: Each packet comprises a header and payload. The header contains fields such as packet type, sequence number, and session ID, facilitating proper routing and handling.</li>
 <li><strong>Handshake Mechanism</strong>: A three-step handshake process establishes a session between peers, ensuring both parties are ready for data exchange.</li>
 <li><strong>Reliability Features</strong>: While UDP is inherently unreliable, the protocol introduces selective acknowledgment and retransmission mechanisms for critical packets, balancing performance with data integrity.</li>
-<li><strong>Session Management</strong>: The <code>UDPConnectionManager</code> oversees active sessions, handling timeouts and reconnections as necessary.</li>
+<li><strong>Session Management</strong>: The <code>LiteConnManager</code> oversees active sessions, handling timeouts and reconnections as necessary.</li>
 </ul>
 <h2 id="core-design-goals">Core Design Goals<a class="headerlink" href="#core-design-goals" title="Permanent link">¶</a></h2>
 <ul>

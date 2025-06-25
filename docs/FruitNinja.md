@@ -6,7 +6,9 @@ Rather than relying on pre-built components and black-box systems, I wanted full
 
 What started as a curiosity has grown into a fully playable classic mode, complete with polished visuals, real-time audio, and responsive controls.
 
-The source code with build instructions can be found [here](https://github.com/DiceSpinner/FruitNinja/tree/main)
+The source code with build instructions can be found [here](https://github.com/DiceSpinner/FruitNinja/tree/main).
+
+The multiplayer communication protocol is detailed in the [LiteConn Protocol Specification](https://github.com/DiceSpinner/FruitNinja/blob/main/Common/doc/lite_conn_protocol_spec.md).
 
 ## Demo
 <video width="900" height="600" controls>

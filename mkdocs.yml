@@ -9,6 +9,8 @@ nav:
     - FruitNinja.md
 
 theme:
+  palette:
+    scheme: slate
   name: 'material'
   features:
     - navigation.sections
